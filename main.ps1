@@ -1,0 +1,1 @@
+Get-MsolUser  -All | Where-Object{$_.IsLicensed -eq $true}| Select-Object DisplayName,UserPrincipalName,Office,UsageLocation -Expand StrongAuthenticationUserDetails | select DisplayName,UserPrincipalName,Office,UsageLocation,Email,PhoneNumber | Export-Csv c:\temp\AuthenMobile.csv -NoTypeInformation
